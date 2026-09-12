@@ -1,0 +1,257 @@
+{
+  "description": "Dataset Pengujian Akademis Extended N=40 untuk Head-to-Head System RAG vs System OKF",
+  "total_queries": 40,
+  "categories": {
+    "exact_match": 10,
+    "informal_paraphrase": 10,
+    "multi_document": 8,
+    "ambiguous_underspecified": 6,
+    "out_of_domain": 6
+  },
+  "queries": [
+    {
+      "id": "ACC-EX-01",
+      "category": "exact_match",
+      "prompt": "Bagaimana cara melakukan void transaksi yang salah di kasir?",
+      "expected_keywords": ["void", "daftar transaksi", "pin", "supervisor", "owner"]
+    },
+    {
+      "id": "ACC-EX-02",
+      "category": "exact_match",
+      "prompt": "Bagaimana langkah-langkah melakukan split bill saat pembayaran kasir?",
+      "expected_keywords": ["split bill", "item", "nominal", "tagihan"]
+    },
+    {
+      "id": "ACC-EX-03",
+      "category": "exact_match",
+      "prompt": "Bagaimana cara melakukan stok opname untuk menyesuaikan selisih barang?",
+      "expected_keywords": ["stok opname", "inventaris", "stok fisik", "selisih"]
+    },
+    {
+      "id": "ACC-EX-04",
+      "category": "exact_match",
+      "prompt": "Bagaimana cara mensetting pembayaran QRIS dinamis di toko?",
+      "expected_keywords": ["qris", "pembayaran", "e-wallet", "pengaturan"]
+    },
+    {
+      "id": "ACC-EX-05",
+      "category": "exact_match",
+      "prompt": "Bagaimana cara menambah akun karyawan baru dan mengatur jam shift kerja?",
+      "expected_keywords": ["karyawan", "absensi", "nip", "shift", "jabatan"]
+    },
+    {
+      "id": "ACC-EX-06",
+      "category": "exact_match",
+      "prompt": "Bagaimana cara membuat paket bundling promo menu makanan?",
+      "expected_keywords": ["promo", "paket", "bundling", "diskon"]
+    },
+    {
+      "id": "ACC-EX-07",
+      "category": "exact_match",
+      "prompt": "Bagaimana cara menghubungkan printer thermal struk via bluetooth?",
+      "expected_keywords": ["printer", "thermal", "bluetooth", "pengaturan", "perangkat"]
+    },
+    {
+      "id": "ACC-EX-08",
+      "category": "exact_match",
+      "prompt": "Bagaimana cara perpanjang masa aktif langganan toko menggunakan Sora Coin?",
+      "expected_keywords": ["sora coin", "langganan", "topup", "perpanjang"]
+    },
+    {
+      "id": "ACC-EX-09",
+      "category": "exact_match",
+      "prompt": "Bagaimana cara mendownload laporan penjualan harian dan omset toko?",
+      "expected_keywords": ["laporan", "penjualan", "keuangan", "export"]
+    },
+    {
+      "id": "ACC-EX-10",
+      "category": "exact_match",
+      "prompt": "Bagaimana cara menambahkan resep bahan baku ke dalam menu makanan?",
+      "expected_keywords": ["resep", "bahan baku", "takaran", "hpp"]
+    },
+
+    {
+      "id": "ACC-INF-01",
+      "category": "informal_paraphrase",
+      "prompt": "gimana sih balikin duit / pembatalan nota kasir kalo salah input mas?",
+      "expected_keywords": ["void", "daftar transaksi", "pin", "supervisor"]
+    },
+    {
+      "id": "ACC-INF-02",
+      "category": "informal_paraphrase",
+      "prompt": "mau bagi bayar rombongan 1 nota di kasir bagi 3 orangg ngetiknya di menu apa yaa?",
+      "expected_keywords": ["split bill", "item", "nominal"]
+    },
+    {
+      "id": "ACC-INF-03",
+      "category": "informal_paraphrase",
+      "prompt": "stok fisik gula di dapur kok beda sm di hp, cara benerin selisihnya gmna bro?",
+      "expected_keywords": ["stok opname", "inventaris", "stok fisik", "selisih"]
+    },
+    {
+      "id": "ACC-INF-04",
+      "category": "informal_paraphrase",
+      "prompt": "cara pasang qris toko biar otomatis muncul barcode di kasir gimana?",
+      "expected_keywords": ["qris", "pembayaran", "e-wallet"]
+    },
+    {
+      "id": "ACC-INF-05",
+      "category": "informal_paraphrase",
+      "prompt": "mau daftarin anak kasir baru sm atur jadwal jam masuknya dibagian mana?",
+      "expected_keywords": ["karyawan", "absensi", "nip", "shift"]
+    },
+    {
+      "id": "ACC-INF-06",
+      "category": "informal_paraphrase",
+      "prompt": "cara bikin promo hemat 2 barang dapet harga potongan gimana ya?",
+      "expected_keywords": ["promo", "paket", "bundling", "diskon"]
+    },
+    {
+      "id": "ACC-INF-07",
+      "category": "informal_paraphrase",
+      "prompt": "print struk kasir gk mau nyala bluetoothnya konekin lg dmn?",
+      "expected_keywords": ["printer", "thermal", "bluetooth"]
+    },
+    {
+      "id": "ACC-INF-08",
+      "category": "informal_paraphrase",
+      "prompt": "toko udah mau habis masa aktifnya, mau perpanjang pk sora coin gmn?",
+      "expected_keywords": ["sora coin", "langganan", "perpanjang"]
+    },
+    {
+      "id": "ACC-INF-09",
+      "category": "informal_paraphrase",
+      "prompt": "download rekapan omset harian excel toko buat bos di menu mana?",
+      "expected_keywords": ["laporan", "penjualan", "export"]
+    },
+    {
+      "id": "ACC-INF-10",
+      "category": "informal_paraphrase",
+      "prompt": "nambahin bahan kopi sm susu ke menu espresso biar HPP kehitung gmn?",
+      "expected_keywords": ["resep", "bahan baku", "takaran", "hpp"]
+    },
+
+    {
+      "id": "ACC-MUL-01",
+      "category": "multi_document",
+      "prompt": "Bagaimana cara membuat menu baru sekaligus menambahkan resep bahan baku dan menetapkan harga jual di atas HPP?",
+      "expected_keywords": ["kategori", "tambah menu", "resep", "bahan baku", "hpp", "harga jual"]
+    },
+    {
+      "id": "ACC-MUL-02",
+      "category": "multi_document",
+      "prompt": "Bagaimana prosedur void transaksi jika pesanan tersebut sudah menggunakan diskon promo dan dipisah nota (split bill)?",
+      "expected_keywords": ["void", "split bill", "pin", "supervisor", "batal"]
+    },
+    {
+      "id": "ACC-MUL-03",
+      "category": "multi_document",
+      "prompt": "Bagaimana cara menambah karyawan kasir baru, mengatur jam shift kerja, dan membatasi hak aksesnya agar tidak bisa lihat laporan omset?",
+      "expected_keywords": ["karyawan", "nip", "shift", "aksesibilitas", "jabatan"]
+    },
+    {
+      "id": "ACC-MUL-04",
+      "category": "multi_document",
+      "prompt": "Jika bahan baku stoknya habis saat promo bundling tayang, apa dampak ke sistem dan bagaimana cara melakukan stok opname untuk mengaktifkannya kembali?",
+      "expected_keywords": ["bundling", "stok habis", "stok opname", "inventaris"]
+    },
+    {
+      "id": "ACC-MUL-05",
+      "category": "multi_document",
+      "prompt": "Bagaimana flow dari perpanjangan langganan via Sora Coin hingga pengiriman bukti invoice/email konfirmasi ke owner?",
+      "expected_keywords": ["sora coin", "langganan", "owner", "email", "expired"]
+    },
+    {
+      "id": "ACC-MUL-06",
+      "category": "multi_document",
+      "prompt": "Bagaimana cara mengatur biaya regulasi operasional outlet dan memperhitungkannya ke dalam HPP resep produk?",
+      "expected_keywords": ["regulasi", "operasional", "hpp", "resep"]
+    },
+    {
+      "id": "ACC-MUL-07",
+      "category": "multi_document",
+      "prompt": "Bagaimana integrasi menu POS Sora Seventh dengan platform online food seperti GoFood/GrabFood dan pengaturan komisi aplikasinya?",
+      "expected_keywords": ["online food", "harga", "integrasi"]
+    },
+    {
+      "id": "ACC-MUL-08",
+      "category": "multi_document",
+      "prompt": "Bagaimana cara mengeksport laporan finansial harian serta memverifikasi transaksi pembayaran QRIS dinamis yang terpending?",
+      "expected_keywords": ["laporan", "finansial", "qris", "verifikasi"]
+    },
+
+    {
+      "id": "ACC-AMB-01",
+      "category": "ambiguous_underspecified",
+      "prompt": "Kenapa transaksi saya tidak bisa disimpan?",
+      "expected_keywords": ["stok", "hpp", "pin", "harga"]
+    },
+    {
+      "id": "ACC-AMB-02",
+      "category": "ambiguous_underspecified",
+      "prompt": "Bagaimana cara mengubah harga barang?",
+      "expected_keywords": ["menu", "harga jual", "hpp"]
+    },
+    {
+      "id": "ACC-AMB-03",
+      "category": "ambiguous_underspecified",
+      "prompt": "Kenapa printer kasir saya tidak mencetak struk?",
+      "expected_keywords": ["printer", "bluetooth", "paper jam", "pairing"]
+    },
+    {
+      "id": "ACC-AMB-04",
+      "category": "ambiguous_underspecified",
+      "prompt": "Karyawan saya tidak bisa login ke aplikasi kasir, kenapa ya?",
+      "expected_keywords": ["karyawan", "username", "password", "pin"]
+    },
+    {
+      "id": "ACC-AMB-05",
+      "category": "ambiguous_underspecified",
+      "prompt": "Bagaimana cara mengatasi selisih kas toko?",
+      "expected_keywords": ["stok opname", "laporan", "kasir"]
+    },
+    {
+      "id": "ACC-AMB-06",
+      "category": "ambiguous_underspecified",
+      "prompt": "Kenapa promo tidak bisa dipasang saat checkout?",
+      "expected_keywords": ["promo", "stok", "masa berlaku", "diskon"]
+    },
+
+    {
+      "id": "ACC-OOD-01",
+      "category": "out_of_domain",
+      "prompt": "Bagaimana cara memasak resep nasi goreng enak di dapur?",
+      "expected_keywords": ["belum ditemukan", "whatsapp", "support"]
+    },
+    {
+      "id": "ACC-OOD-02",
+      "category": "out_of_domain",
+      "prompt": "Siapakah presiden Indonesia saat ini dan berapa jumlah provinsinya?",
+      "expected_keywords": ["belum ditemukan", "whatsapp", "support"]
+    },
+    {
+      "id": "ACC-OOD-03",
+      "category": "out_of_domain",
+      "prompt": "Bagaimana cara memperbaiki AC toko yang tidak dingin?",
+      "expected_keywords": ["belum ditemukan", "whatsapp", "support"]
+    },
+    {
+      "id": "ACC-OOD-04",
+      "category": "out_of_domain",
+      "prompt": "Berapa ramalan cuaca besok di Jakarta dan Surabaya?",
+      "expected_keywords": ["belum ditemukan", "whatsapp", "support"]
+    },
+    {
+      "id": "ACC-OOD-05",
+      "category": "out_of_domain",
+      "prompt": "Bagaimana cara perpanjang SIM C di Polres terdekat?",
+      "expected_keywords": ["belum ditemukan", "whatsapp", "support"]
+    },
+    {
+      "id": "ACC-OOD-06",
+      "category": "out_of_domain",
+      "prompt": "Bagaimana cara mendaftar akun rekening bank BCA online di HP?",
+      "expected_keywords": ["belum ditemukan", "whatsapp", "support"]
+    }
+  ]
+}

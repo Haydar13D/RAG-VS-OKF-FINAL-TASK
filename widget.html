@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sora Assistant Chat Widget - Sora Seventh POS</title>
+  <style>
+    /* ==========================================================================
+       SORA POS CHAT WIDGET STYLES
+       Theme: Sora Green (#84cc16 / #70c631), Clean Modern Design
+       ========================================================================== */
+
+    :root {
+      --sora-green: #84cc16;
+      --sora-green-dark: #65a30d;
+      --sora-green-light: #f7fee7;
+      --sora-green-border: #d9f99d;
+      --sora-text-main: #1e293b;
+      --sora-text-muted: #64748b;
+      --sora-border: #e2e8f0;
+      --sora-bg-user: #f1f5f9;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+    }
+
+    #pos-chat-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 99999;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--sora-text-main);
+      box-sizing: border-box;
+    }
+
+    #pos-chat-widget * {
+      box-sizing: border-box;
+    }
+
+    /* Floating Toggle Button */
+    #pos-chat-toggle {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      border: none;
+      background: linear-gradient(135deg, #84cc16, #65a30d);
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(132, 204, 22, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    #pos-chat-toggle:hover {
+      transform: scale(1.06);
+      box-shadow: 0 10px 28px rgba(132, 204, 22, 0.5);
+    }
+
+    #pos-chat-toggle svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    /* Chat Box Popup Container */
+    #pos-chat-box {
+      position: fixed;
+      bottom: 96px;
+      right: 24px;
+      width: 400px;
+      max-width: calc(100vw - 32px);
+      height: 540px;
+      max-height: calc(100vh - 120px);
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.06);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      animation: posSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes posSlideUp {
+      from { opacity: 0; transform: translateY(16px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    /* Top Gradient Bar Line */
+    #pos-chat-accent-bar {
+      height: 3px;
+      width: 100%;
+      background: linear-gradient(90deg, #84cc16, #10b981, #06b6d4);
+    }
+
+    /* Header Section */
+    #pos-chat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--sora-border);
+    }
+
+    .pos-header-icon-btn {
+      background: transparent;
+      border: none;
+      color: #64748b;
+      padding: 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+
+    .pos-header-icon-btn:hover {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    .pos-header-title-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .pos-header-title {
+      font-weight: 700;
+      font-size: 16px;
+      color: #0f172a;
+      letter-spacing: -0.2px;
+    }
+
+    .pos-chat-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--sora-green-light);
+      color: var(--sora-green-dark);
+      border: 1px solid var(--sora-green-border);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 12px;
+    }
+
+    /* Messages List Container */
+    #pos-chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      scroll-behavior: smooth;
+    }
+
+    #pos-chat-messages::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    #pos-chat-messages::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 4px;
+    }
+
+    /* Message Rows */
+    .pos-msg-row {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+      animation: posFadeIn 0.25s ease-out;
+    }
+
+    @keyframes posFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .pos-msg-row.user {
+      justify-content: flex-end;
+    }
+
+    .pos-msg-row.bot {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+
+    /* Bot Sparkle Avatar */
+    .pos-bot-avatar {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #84cc16, #65a30d);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+      box-shadow: 0 2px 6px rgba(132, 204, 22, 0.3);
+    }
+
+    .pos-bot-content {
+      flex: 1;
+      min-width: 0; /* Allows text to use full remaining space */
+    }
+
+    /* Message Bubbles */
+    .pos-msg-bubble {
+      font-size: 13.5px;
+      line-height: 1.55;
+      word-break: break-word;
+    }
+
+    .pos-msg-bubble.user {
+      background: var(--sora-bg-user);
+      color: #0f172a;
+      padding: 9px 14px;
+      border-radius: 14px 14px 2px 14px;
+      max-width: 82%;
+      font-weight: 500;
+    }
+
+    .pos-msg-bubble.bot {
+      background: transparent;
+      color: #1e293b;
+      padding: 0;
+      width: 100%;
+    }
+
+    /* Markdown formatting styles inside Bot bubbles */
+    .pos-msg-bubble.bot p {
+      margin: 0 0 8px 0;
+    }
+    .pos-msg-bubble.bot p:last-child {
+      margin-bottom: 0;
+    }
+    .pos-msg-bubble.bot b, .pos-msg-bubble.bot strong {
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .pos-msg-bubble.bot ul, .pos-msg-bubble.bot ol {
+      margin: 6px 0 8px 0;
+      padding-left: 20px;
+    }
+    .pos-msg-bubble.bot li {
+      margin-bottom: 4px;
+    }
+    .pos-msg-bubble.bot code {
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 12.5px;
+    }
+    .pos-warning-box {
+      background: #fffbeb;
+      border-left: 3px solid #f59e0b;
+      padding: 8px 10px;
+      margin: 6px 0;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+
+    /* AI Message Action Icons (Thumbs Up / Down) */
+    .pos-msg-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .pos-action-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+    }
+
+    .pos-action-btn:hover {
+      color: #475569;
+      background: #f1f5f9;
+      transform: scale(1.1);
+    }
+
+    .pos-action-btn.active-up {
+      color: #84cc16;
+      background: var(--sora-green-light);
+    }
+
+    .pos-action-btn.active-down {
+      color: #ef4444;
+      background: #fef2f2;
+    }
+
+    /* Responding / Typing Animation Indicator */
+    .pos-pulse-avatar {
+      animation: posPulseGlow 1.5s infinite ease-in-out;
+    }
+
+    @keyframes posPulseGlow {
+      0% { box-shadow: 0 0 0 0 rgba(132, 204, 22, 0.6); }
+      70% { box-shadow: 0 0 0 8px rgba(132, 204, 22, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(132, 204, 22, 0); }
+    }
+
+    .pos-typing-bubble {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 8px 12px;
+      background: #f8fafc;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      width: auto !important;
+    }
+
+    .pos-typing-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--sora-green);
+      animation: posDotBounce 1.4s infinite ease-in-out both;
+    }
+
+    .pos-typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .pos-typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    .pos-typing-dot:nth-child(3) { animation-delay: 0s; }
+
+    @keyframes posDotBounce {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+      40% { transform: scale(1.15); opacity: 1; }
+    }
+
+    /* Footer & Input Pill Section */
+    #pos-chat-footer {
+      padding: 12px 14px 10px 14px;
+      background: #ffffff;
+      border-top: 1px solid var(--sora-border);
+    }
+
+    #pos-chat-input-pill {
+      display: flex;
+      align-items: center;
+      border: 2px solid #0f172a;
+      border-radius: 24px;
+      padding: 4px 6px 4px 14px;
+      background: #ffffff;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    #pos-chat-input-pill:focus-within {
+      border-color: var(--sora-green);
+      box-shadow: 0 0 0 3px rgba(132, 204, 22, 0.2);
+    }
+
+    #pos-chat-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      font-size: 13.5px;
+      color: #0f172a;
+      font-family: inherit;
+      padding: 4px 0;
+    }
+
+    #pos-chat-input::placeholder {
+      color: #94a3b8;
+    }
+
+    #pos-chat-send {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: #cbd5e1;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease, transform 0.15s ease;
+    }
+
+    #pos-chat-send:not(:disabled) {
+      background: var(--sora-green);
+      cursor: pointer;
+    }
+
+    #pos-chat-send:not(:disabled):hover {
+      background: var(--sora-green-dark);
+      transform: scale(1.06);
+    }
+
+    #pos-chat-send:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .pos-disclaimer {
+      font-size: 11px;
+      color: var(--sora-text-muted);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .pos-disclaimer a {
+      color: #2563eb;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="pos-chat-widget">
+    <!-- Floating Button Toggle -->
+    <button id="pos-chat-toggle" aria-label="Buka Chat AI Assistant">
+      <svg class="pos-icon-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+      </svg>
+      <svg class="pos-icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="display:none;">
+        <path d="M18 6L6 18M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Main Chat Popup Box -->
+    <div id="pos-chat-box" style="display: none;">
+      <!-- Top Gradient Accent Strip (Sora POS Green -> Emerald -> Cyan) -->
+      <div id="pos-chat-accent-bar"></div>
+
+      <!-- Header Section -->
+      <div id="pos-chat-header">
+        <!-- 3 Vertical Dots Menu -->
+        <button class="pos-header-icon-btn" aria-label="Opsi">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <circle cx="12" cy="5" r="2"/>
+            <circle cx="12" cy="12" r="2"/>
+            <circle cx="12" cy="19" r="2"/>
+          </svg>
+        </button>
+
+        <!-- Center Title + Badge -->
+        <div class="pos-header-title-container">
+          <span class="pos-header-title">Ask Sora</span>
+          <span class="pos-chat-badge">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            built-in
+          </span>
+        </div>
+
+        <!-- Minimize Button -->
+        <button id="pos-chat-minimize" class="pos-header-icon-btn" aria-label="Minimize">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Messages Container -->
+      <div id="pos-chat-messages">
+        <!-- Welcome AI Message -->
+        <div class="pos-msg-row bot">
+          <div class="pos-bot-avatar">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+            </svg>
+          </div>
+          <div class="pos-bot-content">
+            <div class="pos-msg-bubble bot">
+              Halo! Saya <b>Sora Assistant</b>, AI Customer Support resmi untuk <b>Sora Seventh POS</b>.<br><br>
+              Ada yang bisa saya bantu terkait operasional kasir, promo, stok, atau absensi hari ini?
+            </div>
+            <div class="pos-msg-actions">
+              <button class="pos-action-btn thumbs-up" title="Membantu" onclick="posRateMsg(this, 'up')">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                </svg>
+              </button>
+              <button class="pos-action-btn thumbs-down" title="Kurang membantu" onclick="posRateMsg(this, 'down')">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Responding Animation Container (Hidden by default) -->
+      <div id="pos-chat-typing" class="pos-msg-row bot" style="display: none;">
+        <div class="pos-bot-avatar pos-pulse-avatar">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+          </svg>
+        </div>
+        <div class="pos-bot-content">
+          <div class="pos-msg-bubble bot pos-typing-bubble">
+            <span class="pos-typing-dot"></span>
+            <span class="pos-typing-dot"></span>
+            <span class="pos-typing-dot"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Section Area -->
+      <div id="pos-chat-footer">
+        <div id="pos-chat-input-pill">
+          <input id="pos-chat-input" type="text" placeholder="Ask a question..." autocomplete="off" />
+          <button id="pos-chat-send" aria-label="Kirim Pesan" disabled>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+        <div class="pos-disclaimer">
+          By chatting, you agree to this <a href="#" onclick="event.preventDefault(); alert('Persyaratan Penggunaan Sora Assistant');">disclaimer</a>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    // Config Backend URL
+    const BACKEND_URL = window.POS_CHAT_BACKEND_URL || "http://localhost:8000/chat";
+    const FEEDBACK_URL = window.POS_FEEDBACK_URL || "http://localhost:8000/feedback";
+
+    const toggle = document.getElementById("pos-chat-toggle");
+    const box = document.getElementById("pos-chat-box");
+    const minimize = document.getElementById("pos-chat-minimize");
+    const messages = document.getElementById("pos-chat-messages");
+    const typingIndicator = document.getElementById("pos-chat-typing");
+    const input = document.getElementById("pos-chat-input");
+    const sendBtn = document.getElementById("pos-chat-send");
+    const iconChat = toggle.querySelector(".pos-icon-chat");
+    const iconClose = toggle.querySelector(".pos-icon-close");
+
+    let isOpen = false;
+
+    function toggleWidget() {
+      isOpen = !isOpen;
+      box.style.display = isOpen ? "flex" : "none";
+      iconChat.style.display = isOpen ? "none" : "block";
+      iconClose.style.display = isOpen ? "block" : "none";
+      if (isOpen) {
+        setTimeout(() => input.focus(), 100);
+        scrollToBottom();
+      }
+    }
+
+    toggle.addEventListener("click", toggleWidget);
+    minimize.addEventListener("click", toggleWidget);
+
+    // Auto open popup when opened directly in browser as a file or demo
+    toggleWidget();
+
+    // Enable/Disable Send button dynamically based on input content
+    input.addEventListener("input", () => {
+      sendBtn.disabled = input.value.trim().length === 0;
+    });
+
+    function scrollToBottom() {
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    // Simple Markdown Renderer for formatted responses
+    function parseMarkdown(text) {
+      if (!text) return "";
+      let html = text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+
+      // Warning alert box
+      html = html.replace(/⚠️\s*\*\*Catatan:\*\*\s*(.*)/gi, '<div class="pos-warning-box">⚠️ <b>Catatan:</b> $1</div>');
+
+      // Bold text **bold**
+      html = html.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+
+      // Bullet points (- or *)
+      const lines = html.split('\n');
+      let inList = false;
+      let resultLines = [];
+
+      for (let line of lines) {
+        let trimmed = line.trim();
+        if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+          if (!inList) {
+            resultLines.push('<ul>');
+            inList = 'ul';
+          }
+          resultLines.push(`<li>${trimmed.substring(2)}</li>`);
+        } else if (/^\d+\.\s/.test(trimmed)) {
+          if (!inList) {
+            resultLines.push('<ol>');
+            inList = 'ol';
+          }
+          resultLines.push(`<li>${trimmed.replace(/^\d+\.\s/, '')}</li>`);
+        } else {
+          if (inList) {
+            resultLines.push(`</${inList}>`);
+            inList = false;
+          }
+          if (trimmed.length > 0) {
+            resultLines.push(`<p>${line}</p>`);
+          }
+        }
+      }
+      if (inList) {
+        resultLines.push(`</${inList}>`);
+      }
+
+      return resultLines.join('');
+    }
+
+    function addMessage(text, sender, msgId = null) {
+      const row = document.createElement("div");
+      row.className = "pos-msg-row " + sender;
+
+      if (sender === "user") {
+        row.innerHTML = `<div class="pos-msg-bubble user">${escapeHtml(text)}</div>`;
+      } else {
+        const parsedText = parseMarkdown(text);
+        const attrMsgId = msgId ? `data-msg-id="${msgId}"` : '';
+        row.innerHTML = `
+          <div class="pos-bot-avatar">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/>
+            </svg>
+          </div>
+          <div class="pos-bot-content">
+            <div class="pos-msg-bubble bot">${parsedText}</div>
+            <div class="pos-msg-actions" ${attrMsgId}>
+              <button class="pos-action-btn thumbs-up" title="Membantu" onclick="posRateMsg(this, 'up', '${msgId || ''}')">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path>
+                </svg>
+              </button>
+              <button class="pos-action-btn thumbs-down" title="Kurang membantu" onclick="posRateMsg(this, 'down', '${msgId || ''}')">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3zm7-13h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        `;
+      }
+
+      messages.appendChild(row);
+      scrollToBottom();
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    // Global Function for Feedback rating
+    window.posRateMsg = function(btn, type, msgId) {
+      const parent = btn.parentElement;
+      const upBtn = parent.querySelector('.thumbs-up');
+      const downBtn = parent.querySelector('.thumbs-down');
+
+      let newRating = null;
+      if (type === 'up') {
+        const isActive = upBtn.classList.toggle('active-up');
+        downBtn.classList.remove('active-down');
+        newRating = isActive ? 'up' : null;
+      } else {
+        const isActive = downBtn.classList.toggle('active-down');
+        upBtn.classList.remove('active-up');
+        newRating = isActive ? 'down' : null;
+      }
+
+      if (msgId && newRating) {
+        fetch(FEEDBACK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message_id: msgId, rating: newRating }),
+        }).catch(err => console.error("Feedback submit error:", err));
+      }
+    };
+
+    async function sendMessage() {
+      const text = input.value.trim();
+      if (!text) return;
+
+      // Display user message
+      addMessage(text, "user");
+      input.value = "";
+      sendBtn.disabled = true;
+
+      // Show AI Responding typing animation loader
+      typingIndicator.style.display = "flex";
+      messages.appendChild(typingIndicator); // move typing indicator to bottom
+      scrollToBottom();
+
+      try {
+        const res = await fetch(BACKEND_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: text }),
+        });
+
+        const data = await res.json();
+        typingIndicator.style.display = "none";
+        addMessage(data.answer || "Maaf, tidak ada jawaban yang diterima.", "bot", data.message_id);
+      } catch (err) {
+        typingIndicator.style.display = "none";
+        addMessage("Maaf, terjadi kesalahan saat menghubungi server.", "bot");
+      }
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
+  })();
+  </script>
+</body>
+</html>

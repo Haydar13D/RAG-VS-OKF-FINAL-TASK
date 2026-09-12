@@ -1,0 +1,66 @@
+{
+  "version": "FINAL_LOCKED_v1",
+  "description": "Instrument Evaluasi Akurasi - Sora Assistant (RAG vs OKF)",
+  "queries": [
+    {
+      "id": "ACC-01",
+      "category": "kasir",
+      "prompt": "Bagaimana cara melakukan void transaksi yang salah di kasir?",
+      "expected_keywords": ["void", "daftar transaksi", "pin", "supervisor", "owner"]
+    },
+    {
+      "id": "ACC-02",
+      "category": "kasir",
+      "prompt": "Bagaimana langkah-langkah melakukan split bill saat pembayaran kasir?",
+      "expected_keywords": ["split bill", "item", "nominal", "tagihan"]
+    },
+    {
+      "id": "ACC-03",
+      "category": "inventaris",
+      "prompt": "Bagaimana cara melakukan stok opname untuk menyesuaikan selisih barang?",
+      "expected_keywords": ["stok opname", "inventaris", "stok fisik", "selisih"]
+    },
+    {
+      "id": "ACC-04",
+      "category": "pembayaran",
+      "prompt": "Bagaimana cara mensetting pembayaran QRIS dinamis di toko?",
+      "expected_keywords": ["qris", "pembayaran", "e-wallet", "pengaturan"]
+    },
+    {
+      "id": "ACC-05",
+      "category": "karyawan",
+      "prompt": "Bagaimana cara menambah akun karyawan baru dan mengatur jam shift kerja?",
+      "expected_keywords": ["karyawan", "absensi", "nip", "shift", "jabatan"]
+    },
+    {
+      "id": "ACC-06",
+      "category": "menu",
+      "prompt": "Bagaimana cara membuat paket bundling promo menu makanan?",
+      "expected_keywords": ["promo", "paket", "bundling", "diskon"]
+    },
+    {
+      "id": "ACC-07",
+      "category": "sistem",
+      "prompt": "Bagaimana cara menghubungkan printer thermal struk via bluetooth?",
+      "expected_keywords": ["printer", "thermal", "bluetooth", "pengaturan", "perangkat"]
+    },
+    {
+      "id": "ACC-08",
+      "category": "langganan",
+      "prompt": "Bagaimana cara perpanjang masa aktif langganan toko menggunakan Sora Coin?",
+      "expected_keywords": ["sora coin", "langganan", "topup", "perpanjang"]
+    },
+    {
+      "id": "ACC-09",
+      "category": "laporan",
+      "prompt": "Bagaimana cara mendownload laporan penjualan harian dan omset toko?",
+      "expected_keywords": ["laporan", "penjualan", "keuangan", "export"]
+    },
+    {
+      "id": "ACC-10",
+      "category": "ood_refusal",
+      "prompt": "Bagaimana cara memasak resep nasi goreng enak di dapur?",
+      "expected_keywords": ["belum ditemukan", "whatsapp", "support"]
+    }
+  ]
+}

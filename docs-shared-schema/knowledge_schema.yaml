@@ -1,0 +1,54 @@
+# Schema Frontmatter Dokumentasi Sora POS (DIPAKAI BERSAMA system-rag & system-okf)
+# Semua file markdown (.md) di system-rag/docs/ dan system-okf/docs/ WAJIB mematuhi skema ini.
+
+type: object
+required:
+  - id
+  - title
+  - category
+  - target_role
+  - tags
+properties:
+  id:
+    type: string
+    description: "ID unik dokumen dalam format uppercase dengan prefiks DOC-, contoh: DOC-01-PROMO"
+  title:
+    type: string
+    description: "Judul lengkap dokumen operasional"
+  category:
+    type: string
+    enum:
+      - kasir
+      - inventaris
+      - karyawan
+      - menu
+      - pembayaran
+      - sistem
+      - laporan
+      - donasi
+      - langganan
+      - umum
+    description: "Kategori operasional utama"
+  target_role:
+    type: string
+    enum:
+      - kasir
+      - supervisor
+      - owner
+      - umum
+    description: "Hak akses peran terkecil yang relevan dengan panduan"
+  tags:
+    type: array
+    items:
+      type: string
+    description: "Daftar kata kunci pencarian operasional (lowercase)"
+  prerequisites:
+    type: array
+    items:
+      type: string
+    description: "Daftar ID dokumen prasyarat yang wajib dipahami sebelum dokumen ini (diperlukan untuk OKF navigation)"
+  related:
+    type: array
+    items:
+      type: string
+    description: "Daftar ID dokumen terkait atau langkah lanjutan (diperlukan untuk OKF navigation)"
