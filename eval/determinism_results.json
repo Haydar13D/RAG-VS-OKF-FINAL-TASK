@@ -1,0 +1,359 @@
+{
+  "timestamp": "2026-09-19 20:31:47",
+  "rag": {
+    "system_name": "SYSTEM RAG",
+    "target_url": "http://localhost:8000/chat",
+    "total_categories": 5,
+    "matrix_2x2": {
+      "deterministic_and_correct": 2,
+      "deterministic_and_incorrect": 1,
+      "non_deterministic_and_correct": 1,
+      "non_deterministic_and_incorrect": 1
+    },
+    "category_details": [
+      {
+        "category": "exact_match",
+        "prompt": "Bagaimana cara melakukan void transaksi yang salah di kasir?",
+        "expected_status": "ANSWERED",
+        "is_deterministic": true,
+        "is_correct": true,
+        "quadrant": "deterministic_and_correct",
+        "tokens": [
+          1191,
+          1191,
+          1191
+        ],
+        "context_chars": [
+          6521,
+          6521,
+          6521
+        ],
+        "providers": [
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)"
+        ],
+        "statuses": [
+          "ANSWERED",
+          "ANSWERED",
+          "ANSWERED"
+        ],
+        "answers": [
+          "Untuk melakukan pembatalan atau void transaksi yang salah di kasir Sora Seventh, Anda dapat mengikuti langkah-langkah berikut:\n\n1. **Buka Menu Riwayat Transaksi/Pesanan**:\n   - Buka menu **Daftar Transaksi / Riwayat Pesanan** di navigasi sebelah kiri.\n   - Cari dan klik **Nomor Nota** yang ingin dibatalkan.\n\n2. **Pilih Opsi Void Nota**:\n   - Klik tombol **Atur Transaksi** di kanan atas.\n   - Pilih opsi **Void Nota / Batalkan Transaksi**.\n\n3. **Isi Alasan Pembatalan**:\n   - Masukkan alasan pembatalan (misal: \"Pelanggan Salah Pesan\" atau \"Kualitas Bahan Rusak\").\n\n4. **Masukkan PIN Supervisor**:\n   - Pilih atau ketik **PIN Supervisor / Manager / Owner** yang diperlukan.\n\n5. **Konfirmasi Void Nota**:\n   - Klik tombol **Konfirmasi Void**.\n   - Struk pembatalan (*Void Slip*) akan tercetak jika printer terhubung.\n\nJika Anda mengalami kesulitan atau memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi Tim Support kami via WhatsApp: [Hubungi CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197&type=phone_number).",
+          "Untuk melakukan pembatalan atau void transaksi yang salah di kasir Sora Seventh, Anda dapat mengikuti langkah-langkah berikut:\n\n1. **Buka Menu Riwayat Transaksi/Pesanan**:\n   - Buka menu **Daftar Transaksi / Riwayat Pesanan** di navigasi sebelah kiri.\n   - Cari dan klik **Nomor Nota** yang ingin dibatalkan.\n\n2. **Pilih Opsi Void Nota**:\n   - Klik tombol **Atur Transaksi** di kanan atas.\n   - Pilih opsi **Void Nota / Batalkan Transaksi**.\n\n3. **Isi Alasan Pembatalan**:\n   - Masukkan alasan pembatalan (misal: \"Pelanggan Salah Pesan\" atau \"Kualitas Bahan Rusak\").\n\n4. **Masukkan PIN Supervisor**:\n   - Pilih atau ketik **PIN Supervisor / Manager / Owner** yang diperlukan.\n\n5. **Konfirmasi Void Nota**:\n   - Klik tombol **Konfirmasi Void**.\n   - Struk pembatalan (*Void Slip*) akan tercetak jika printer terhubung.\n\nJika Anda mengalami kesulitan atau memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi Tim Support kami via WhatsApp: [Hubungi CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197&type=phone_number).",
+          "Untuk melakukan pembatalan atau void transaksi yang salah di kasir Sora Seventh, Anda dapat mengikuti langkah-langkah berikut:\n\n1. **Buka Menu Riwayat Transaksi/Pesanan**:\n   - Buka menu **Daftar Transaksi / Riwayat Pesanan** di navigasi sebelah kiri.\n   - Cari dan klik **Nomor Nota** yang ingin dibatalkan.\n\n2. **Pilih Opsi Void Nota**:\n   - Klik tombol **Atur Transaksi** di kanan atas.\n   - Pilih opsi **Void Nota / Batalkan Transaksi**.\n\n3. **Isi Alasan Pembatalan**:\n   - Masukkan alasan pembatalan (misal: \"Pelanggan Salah Pesan\" atau \"Kualitas Bahan Rusak\").\n\n4. **Masukkan PIN Supervisor**:\n   - Pilih atau ketik **PIN Supervisor / Manager / Owner** yang diperlukan.\n\n5. **Konfirmasi Void Nota**:\n   - Klik tombol **Konfirmasi Void**.\n   - Struk pembatalan (*Void Slip*) akan tercetak jika printer terhubung.\n\nJika Anda mengalami kesulitan atau memiliki pertanyaan lebih lanjut, jangan ragu untuk menghubungi Tim Support kami via WhatsApp: [Hubungi CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197&type=phone_number)."
+        ]
+      },
+      {
+        "category": "informal_paraphrase",
+        "prompt": "gimana kalo mau hapus pesanan yg udah diinput kasir?",
+        "expected_status": "ANSWERED",
+        "is_deterministic": true,
+        "is_correct": false,
+        "quadrant": "deterministic_and_incorrect",
+        "tokens": [
+          454,
+          454,
+          454
+        ],
+        "context_chars": [
+          1387,
+          1387,
+          1387
+        ],
+        "providers": [
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)"
+        ],
+        "statuses": [
+          "ANSWERED",
+          "ANSWERED",
+          "ANSWERED"
+        ],
+        "answers": [
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [Hubungi CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [Hubungi CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [Hubungi CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)"
+        ]
+      },
+      {
+        "category": "multi_document",
+        "prompt": "Apa perbedaan langkah split bill dan void transaksi saat pembayaran?",
+        "expected_status": "ANSWERED",
+        "is_deterministic": false,
+        "is_correct": true,
+        "quadrant": "non_deterministic_and_correct",
+        "tokens": [
+          1397,
+          1397,
+          1397
+        ],
+        "context_chars": [
+          7993,
+          7993,
+          7993
+        ],
+        "providers": [
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)"
+        ],
+        "statuses": [
+          "ANSWERED",
+          "ANSWERED",
+          "ANSWERED"
+        ],
+        "answers": [
+          "Langkah-langkah Split Bill dan Void Transaksi dalam sistem POS Sora Seventh berfungsi untuk tujuan yang berbeda, meskipun keduanya melibatkan pembatalan atau pengecualian dari transaksi sebelumnya. Berikut perbandingannya:\n\n### Langkah Operasional Split Bill\n1. **Pada layar checkout transaksi kasir**, klik tombol **Split Bill** di bagian bawah daftar pesanan.\n2. Pilih metode pembagian:\n   - **Berdasarkan Item**: Geser/pindahkan item pesanan ke kolom **Tagihan 1**, **Tagihan 2**, dst.\n   - **Berdasarkan Nominal**: Tentukan jumlah pembagi (misal dibagi 3 orang sama rata).\n3. Selesaikan pembayaran untuk **Tagihan 1** terlebih dahulu dengan metode pembayaran yang dipilih (Cash/QRIS/EDC).\n4. Lanjutkan pembayaran untuk **Tagihan 2** dan seterusnya hingga semua kelompok tagihan Lunas.\n5. Klik **Cetak Semua Struk Terpisah**.\n\n### Langkah Operasional Void Transaksi\n1. Buka menu **Daftar Transaksi / Riwayat Pesanan** di navigasi sebelah kiri.\n2. Cari dan klik **Nomor Nota** yang ingin dibatalkan.\n3. Klik tombol **Atur Transaksi** di kanan atas > pilih **Void Nota / Batalkan Transaksi**.\n4. Pilih atau ketik **Alasan Pembatalan** (misal: \"Pelanggan Salah Pesan\" atau \"Kualitas Bahan Rusak\").\n5. Masukkan **PIN Supervisor / Manager / Owner**.\n6. Klik **Konfirmasi Void**. Struk pembatalan (*Void Slip*) akan tercetak jika printer terhubung.\n\n### Perbedaan\n- **Split Bill**: Digunakan untuk memisahkan satu pesanan menjadi beberapa nota tagihan independen, baik berdasarkan item yang dipilih maupun berdasarkan nominal rupiah. Tujuannya adalah untuk memudahkan pembayaran bagi pelanggan yang ingin membayar secara terpisah.\n  \n- **Void Transaksi**: Digunakan untuk membatalkan transaksi yang sudah selesai dan dibayarkan, baik karena kesalahan input, kualitas bahan yang rusak, atau alasan lain. Tujuannya adalah untuk mengembalikan stok bahan baku ke inventaris secara otomatis dan mencatat alasan pembatalan.\n\nJadi, Split Bill lebih berfokus pada pemisahan tagihan, sedangkan Void Transaksi lebih berfokus pada pengecualian atau pembatalan transaksi yang sudah selesai.",
+          "Perbedaan antara fitur Split Bill dan Void Transaksi dalam sistem POS Sora Seventh adalah sebagai berikut:\n\n**Split Bill**: \n- Digunakan untuk memisahkan satu pesanan menjadi beberapa nota tagihan independen.\n- Memungkinkan pembagian berdasarkan item atau nominal rupiah.\n- Dapat dilakukan selama transaksi masih berlangsung dan semua tagihan sudah dibayar.\n\n**Void Transaksi**: \n- Digunakan untuk membatalkan transaksi yang sudah selesai dibayar.\n- Melibatkan pengembalian stok bahan baku ke inventaris secara otomatis.\n- Memerlukan verifikasi melalui PIN Supervisor/Manager/Owner.\n- Dapat dilakukan setelah transaksi selesai dan semua pembayaran telah diterima.\n\nJadi, Split Bill digunakan untuk membagi satu pesanan menjadi beberapa bagian, sedangkan Void Transaksi digunakan untuk membatalkan pesanan yang sudah dibayar.",
+          "Perbedaan antara fitur Split Bill dan Void Transaksi dalam sistem POS Sora Seventh adalah sebagai berikut:\n\n**Split Bill**: \n- Digunakan untuk memisahkan satu pesanan menjadi beberapa nota tagihan independen.\n- Memungkinkan pembagian berdasarkan item atau nominal rupiah.\n- Dapat dilakukan selama transaksi masih berlangsung dan semua tagihan sudah dibayar.\n\n**Void Transaksi**: \n- Digunakan untuk membatalkan transaksi yang sudah selesai dibayar.\n- Melibatkan pengembalian stok bahan baku ke inventaris secara otomatis.\n- Memerlukan verifikasi melalui PIN Supervisor/Manager/Owner.\n- Dapat dilakukan setelah transaksi selesai dan semua pembayaran telah diterima.\n\nJadi, Split Bill digunakan untuk membagi satu pesanan menjadi beberapa bagian, sedangkan Void Transaksi digunakan untuk membatalkan pesanan yang sudah dibayar."
+        ]
+      },
+      {
+        "category": "context_bloat",
+        "prompt": "Jelaskan seluruh fitur laporan penjualan dan operasional kasir",
+        "expected_status": "ANSWERED",
+        "is_deterministic": false,
+        "is_correct": false,
+        "quadrant": "non_deterministic_and_incorrect",
+        "tokens": [
+          1498,
+          1498,
+          1498
+        ],
+        "context_chars": [
+          8605,
+          8605,
+          8605
+        ],
+        "providers": [
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)"
+        ],
+        "statuses": [
+          "ANSWERED",
+          "ANSWERED",
+          "ANSWERED"
+        ],
+        "answers": [
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [Hubungi CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197).",
+          "Berikut adalah jawaban singkat mengenai seluruh fitur laporan penjualan dan operasional kasir berdasarkan konteks yang diberikan:\n\n### Laporan Penjualan & Keuangan Usaha\n\n1. **Buka menu Laporan di navigasi sebelah kiri**.\n2. **Pilih Jenis Laporan**:\n   - **Ringkasan Penjualan**: Melihat statistik transaksi, produk terlaris, dan performa per jam.\n   - **Ringkasan Finansial Harian/Bulanan**: Melihat rincian pendapatan berdasarkan metode pembayaran (Cash, Debit, QRIS, E-Wallet).\n   - **Laporan HPP & Margin**: Memantau biaya bahan baku versus omset penjualan.\n3. **Atur Filter**:\n   - Tentukan rentang tanggal (Hari Ini, Minggu Ini, Bulan Ini, atau Custom Tanggal) dan pilih cabang toko jika multi-cabang.\n4. **Export Laporan**: Klik tombol Export Excel / PDF di pojok kanan atas untuk mengunduh laporan keuangan.\n\n### Download Laporan Keuangan dan Sales Report\n\n1. **Klik tombol filter waktu untuk memilih timeframe data sales yang dibutuhkan**.\n2. **Klik tombol download — seluruh report penjualan otomatis diunduh sesuai periode yang dipilih**.\n\n### Manajemen Pelanggan & Loyalty Poin/Koin\n\n1. **Mendaftarkan Pelanggan Baru**: Pada layar Kasir saat transaksi, klik tombol + Tambah Pelanggan. Masukkan Nama, Nomor WhatsApp, dan Email.\n2. **Pengumpulan Poin**: Setiap kali pelanggan terdaftar bertransaksi, sistem otomatis menambahkan Poin/Koin ke akun pelanggan sesuai rasio belanja yang di-setting (misal: belanja Rp 10.000 = 1 Poin).\n3. **Tukar Poin Jadi Diskon**:\n   - Cari dan pilih Nama Pelanggan pada transaksi kasir.\n   - Jika pelanggan memiliki sisa Poin, klik tombol Tukarkan Poin.\n   - Masukkan jumlah poin yang ingin digunakan. Sistem otomatis mengurangi total tagihan checkout.\n\n### Alur Input Data Operasional Awal (Onboarding)\n\n1. **Pengaturan → Profil Bisnis → Profil Usaha** — atur jam operasional usaha agar pelanggan tahu jam buka/tutup.\n2. **Pengaturan → Metode Pembayaran → Buat Metode Pembayaran** — buat dan atur opsi pembayaran yang digunakan toko.\n3. **Pengaturan → Regulasi → Buat Regulasi** — atur biaya tambahan/regulasi usaha.\n4. **Pengaturan → Nota → Atur Tampilan Nota** — atur tampilan struk toko.\n5. **Tagihan → Tambah Meja → Atur Meja** — atur layout dan nomor meja.\n6. **Bahan Baku → Buat Satuan Bahan → Buat Satuan Bahan Baku** — tulis satuan ukur bahan baku agar takaran resep valid.\n7. **Bahan Baku → Buat Bahan Baku → Buat Bahan Baku** — daftarkan semua bahan baku yang dibutuhkan untuk resep menu.\n8. **Resep → Kategori Menu → Buat Kategori Menu** — buat kategori menu agar pelanggan mudah mencari.\n9. **Resep → Buat Menu Baru** — buat menu lengkap dengan detail resep.\n10. **Resep → Buat Varian Menu** — tambahkan varian rasa/topping pada menu.\n11. **Resep → Buat Kemasan** — atur packaging produk, khusus untuk pesanan take away.\n12. **Resep → Buat Online Food** — aktifkan dan atur layanan online food.\n13. **Kasir → Kas Kecil → Mulai Sesi Kasir** — klik untuk mulai menerima transaksi.\n14. **Kasir → Kas Kecil → Tutup Kasir** — klik untuk mengakhiri transaksi hari itu.\n\n### Pertanyaan Umum (FAQ Overview)\n\n**Q: Apa itu Sora Seventh POS?**\nA: Sora Seventh POS adalah aplikasi/sistem kasir digital terpadu untuk restoran, kafe, dan toko retail guna mengelola transaksi, stok, karyawan, dan laporan penjualan.\n\n**Q: Apakah bisa split payment (bayar sebagian cash, sebagian QRIS)?**\nA: Ya, fitur split payment tersedia di menu kasir saat checkout.\n\n**Q: Apakah transaksi tersimpan kalau internet mati?**\nA: Ya, sistem memiliki mode offline untuk transaksi tunai, dan data transaksi akan otomatis tersinkronisasi saat koneksi internet kembali terhubung.",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [Hubungi CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)."
+        ]
+      },
+      {
+        "category": "knowledge_gap",
+        "prompt": "Bagaimana cara mengintegrasikan printer Bluetooth pihak ketiga?",
+        "expected_status": "KNOWLEDGE_GAP",
+        "is_deterministic": true,
+        "is_correct": true,
+        "quadrant": "deterministic_and_correct",
+        "tokens": [
+          251,
+          251,
+          251
+        ],
+        "context_chars": [
+          0,
+          0,
+          0
+        ],
+        "providers": [
+          "Guardrail_Layer2",
+          "Guardrail_Layer2",
+          "Guardrail_Layer2"
+        ],
+        "statuses": [
+          "KNOWLEDGE_GAP",
+          "KNOWLEDGE_GAP",
+          "KNOWLEDGE_GAP"
+        ],
+        "answers": [
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [Hubungi CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197&type=phone_number)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [Hubungi CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197&type=phone_number)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [Hubungi CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197&type=phone_number)"
+        ]
+      }
+    ]
+  },
+  "okf": {
+    "system_name": "SYSTEM OKF",
+    "target_url": "http://localhost:8001/chat",
+    "total_categories": 5,
+    "matrix_2x2": {
+      "deterministic_and_correct": 1,
+      "deterministic_and_incorrect": 3,
+      "non_deterministic_and_correct": 1,
+      "non_deterministic_and_incorrect": 0
+    },
+    "category_details": [
+      {
+        "category": "exact_match",
+        "prompt": "Bagaimana cara melakukan void transaksi yang salah di kasir?",
+        "expected_status": "ANSWERED",
+        "is_deterministic": false,
+        "is_correct": true,
+        "quadrant": "non_deterministic_and_correct",
+        "tokens": [
+          1294,
+          1294,
+          1294
+        ],
+        "context_chars": [
+          6702,
+          6702,
+          6702
+        ],
+        "providers": [
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)"
+        ],
+        "statuses": [
+          "ANSWERED",
+          "ANSWERED",
+          "ANSWERED"
+        ],
+        "answers": [
+          "Untuk melakukan void transaksi yang salah di kasir, ikuti langkah-langkah berikut:\n\n1. **Buka Menu Riwayat Nota Pesanan**:\n   - Pilih menu **Riwayat Nota Pesanan**.\n   \n2. **Pilih Transaksi yang Ingin Dibatalkan**:\n   - Di tabel riwayat pesanan, pilih transaksi yang ingin dibatalkan dengan menekan tombol void di sebelah kanannya.\n\n3. **Void Transaksi**:\n   - Setelah memilih transaksi, klik tombol **Void**.\n   \n4. **Masukkan Alasan Void**:\n   - Di kotak masukan yang muncul, tulis alasan pembatalan (misal: \"Transaksi salah\" atau \"Pesanan tidak sesuai permintaan\").\n\n5. **Konfirmasi Pembatalan**:\n   - Setelah memasukkan alasan, klik tombol **Ya, Batalkan** untuk menyelesaikan proses void.\n\n**Catatan:** Void transaksi hanya dapat dilakukan dalam batas waktu 1x24 jam setelah transaksi tersebut dibuat. Jika lebih dari batas waktu ini, sistem tidak akan memungkinkan pembatalan tersebut dan pesanan tersebut akan dianggap sebagai pembayaran yang benar.\n\nJika Anda mengalami kesulitan atau memiliki pertanyaan lain, jangan ragu untuk menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197&type=phone_number).",
+          "Untuk melakukan void transaksi yang salah di kasir, ikuti langkah-langkah berikut:\n\n1. **Buka Menu Riwayat Nota Pesanan**:\n   - Pilih menu **Riwayat Nota Pesanan**.\n   \n2. **Pilih Transaksi yang Ingin Dibatalkan**:\n   - Di tabel riwayat pesanan, pilih transaksi yang ingin dibatalkan dengan menekan tombol void di sebelah kanannya.\n\n3. **Masukkan Informasi Void**:\n   - Pada form void, masukkan nama akun kasir dan password.\n   - Masukkan alasan pembatalan (misal: \"Transaksi salah\" atau \"Pesanan yang tidak sesuai permintaan\").\n\n4. **Konfirmasi Pembatalan**:\n   - Klik tombol \"Ya, Batalkan\".\n\n5. **Periksa Selisih Kas** (Jika Ada):\n   - Jika selisih kas terjadi setelah void transaksi, klik tombol \"Update Selisih Kas\" dan masukkan alasan selisih tersebut.\n\n6. **Cetak Laporan Void Transaksi**:\n   - Setelah proses void selesai, cetak laporan void transaksi untuk dokumentasi.\n\n**Catatan:** Void transaksi hanya dapat dilakukan dalam batas waktu 1x24 jam setelah transaksi terjadi. Jika lebih dari batas waktu tersebut, sistem tidak akan memungkinkan void transaksi tersebut lagi.\n\nJika Anda mengalami kesulitan atau memiliki pertanyaan lain, silakan hubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197&type=phone_number) untuk bantuan lebih lanjut.",
+          "Untuk melakukan void transaksi yang salah di kasir, ikuti langkah-langkah berikut:\n\n1. **Buka Menu Riwayat Nota Pesanan**:\n   - Pilih menu **Riwayat Nota Pesanan**.\n   \n2. **Pilih Transaksi yang Ingin Dibatalkan**:\n   - Di tabel riwayat pesanan, pilih transaksi yang ingin dibatalkan dengan menekan tombol void di sebelah kanannya.\n\n3. **Masukkan Informasi Void**:\n   - Pada form void, masukkan nama akun kasir dan password.\n   - Masukkan alasan pembatalan (misal: \"Transaksi salah\" atau \"Pesanan yang tidak sesuai permintaan\").\n\n4. **Konfirmasi Pembatalan**:\n   - Klik tombol \"Ya, Batalkan\".\n\n5. **Periksa Selisih Kas** (Jika Ada):\n   - Jika selisih kas terjadi setelah void transaksi, klik tombol \"Update Selisih Kas\" dan masukkan alasan selisih tersebut.\n\n6. **Cetak Laporan Void Transaksi**:\n   - Setelah proses void selesai, cetak laporan void transaksi untuk dokumentasi.\n\n**Catatan:** Void transaksi hanya dapat dilakukan dalam batas waktu 1x24 jam setelah transaksi terjadi. Jika lebih dari batas waktu tersebut, sistem tidak akan memungkinkan void transaksi tersebut lagi.\n\nJika Anda mengalami kesulitan atau memiliki pertanyaan lain, silakan hubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197&type=phone_number) untuk bantuan lebih lanjut."
+        ]
+      },
+      {
+        "category": "informal_paraphrase",
+        "prompt": "gimana kalo mau hapus pesanan yg udah diinput kasir?",
+        "expected_status": "ANSWERED",
+        "is_deterministic": true,
+        "is_correct": false,
+        "quadrant": "deterministic_and_incorrect",
+        "tokens": [
+          957,
+          957,
+          957
+        ],
+        "context_chars": [
+          4585,
+          4585,
+          4585
+        ],
+        "providers": [
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)"
+        ],
+        "statuses": [
+          "ANSWERED",
+          "ANSWERED",
+          "ANSWERED"
+        ],
+        "answers": [
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)"
+        ]
+      },
+      {
+        "category": "multi_document",
+        "prompt": "Apa perbedaan langkah split bill dan void transaksi saat pembayaran?",
+        "expected_status": "ANSWERED",
+        "is_deterministic": true,
+        "is_correct": false,
+        "quadrant": "deterministic_and_incorrect",
+        "tokens": [
+          969,
+          969,
+          969
+        ],
+        "context_chars": [
+          4617,
+          4617,
+          4617
+        ],
+        "providers": [
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)"
+        ],
+        "statuses": [
+          "ANSWERED",
+          "ANSWERED",
+          "ANSWERED"
+        ],
+        "answers": [
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)"
+        ]
+      },
+      {
+        "category": "context_bloat",
+        "prompt": "Jelaskan seluruh fitur laporan penjualan dan operasional kasir",
+        "expected_status": "ANSWERED",
+        "is_deterministic": true,
+        "is_correct": false,
+        "quadrant": "deterministic_and_incorrect",
+        "tokens": [
+          1032,
+          1032,
+          1032
+        ],
+        "context_chars": [
+          5034,
+          5034,
+          5034
+        ],
+        "providers": [
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)"
+        ],
+        "statuses": [
+          "ANSWERED",
+          "ANSWERED",
+          "ANSWERED"
+        ],
+        "answers": [
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)"
+        ]
+      },
+      {
+        "category": "knowledge_gap",
+        "prompt": "Bagaimana cara mengintegrasikan printer Bluetooth pihak ketiga?",
+        "expected_status": "KNOWLEDGE_GAP",
+        "is_deterministic": true,
+        "is_correct": true,
+        "quadrant": "deterministic_and_correct",
+        "tokens": [
+          936,
+          936,
+          936
+        ],
+        "context_chars": [
+          4446,
+          4446,
+          4446
+        ],
+        "providers": [
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)",
+          "Ollama (qwen2.5:3b)"
+        ],
+        "statuses": [
+          "ANSWERED",
+          "ANSWERED",
+          "ANSWERED"
+        ],
+        "answers": [
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)",
+          "Maaf, panduan mengenai operasional tersebut belum ditemukan dalam dokumentasi resmi Sora Seventh. Untuk bantuan lebih lanjut, Anda dapat langsung menghubungi Tim Support kami via WhatsApp: [💬 Chat CS via WhatsApp](https://api.whatsapp.com/send/?phone=6281234520197)"
+        ]
+      }
+    ]
+  }
+}

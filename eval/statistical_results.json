@@ -1,0 +1,37 @@
+{
+  "wilcoxon_w": 79.0,
+  "p_value": 0.34881019592285156,
+  "statistically_significant": false,
+  "rank_biserial_r": 0.2476,
+  "rag": {
+    "median_sec": 53.94,
+    "iqr_sec": 89.77,
+    "mean_sec": 79.2,
+    "std_sec": 73.89,
+    "mean_clean_sec": 67.83,
+    "outliers_count": 1,
+    "mean_prompt_tokens": 1073.7
+  },
+  "okf": {
+    "median_sec": 46.95,
+    "iqr_sec": 41.36,
+    "mean_sec": 55.66,
+    "std_sec": 33.41,
+    "mean_clean_sec": 55.66,
+    "outliers_count": 0,
+    "mean_prompt_tokens": 1115.8
+  },
+  "token_difference_pct": 3.78,
+  "category_breakdown": {
+    "exact_match": {
+      "rag_median_sec": 109.11,
+      "okf_median_sec": 65.0,
+      "diff_sec": -44.11
+    },
+    "informal_paraphrase": {
+      "rag_median_sec": 34.33,
+      "okf_median_sec": 42.84,
+      "diff_sec": 8.51
+    }
+  }
+}
